@@ -16,7 +16,6 @@ class SimulatorTests(unittest.TestCase):
     def test_unsupported(self):
         for command in ['sudo reboot','rm -rf /','bash','curl example.org','ls; reboot']:
             self.assertFalse(Simulator().run(command)[1])
-if __name__=='__main__': unittest.main()
 
 class EnglishTests(unittest.TestCase):
     def test_english_lessons(self):
@@ -25,3 +24,14 @@ class EnglishTests(unittest.TestCase):
         for lesson in LESSONS_EN:
             for command in lesson[4].split('|'):
                 self.assertTrue(Simulator('en').run(command)[1], command)
+
+class LexiconTests(unittest.TestCase):
+    def test_entries(self):
+        from lexicon import ENTRIES
+        self.assertGreaterEqual(len(ENTRIES), 94)
+        self.assertEqual(len({row[0] for row in ENTRIES}), len(ENTRIES))
+        for row in ENTRIES:
+            self.assertEqual(len(row), 4)
+            self.assertTrue(all(isinstance(value, str) and value.strip() for value in row))
+
+if __name__=='__main__': unittest.main()

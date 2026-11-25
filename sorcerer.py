@@ -10,6 +10,7 @@ LANG="de"
 def tr(s): return UI.get(s,s) if LANG=="en" else s
 
 from simulator import Simulator
+from lexicon import ENTRIES
 BASE=Path(__file__).resolve().parent
 SAVE=Path.home()/'.local/share/linux-sorcerer/progress.json'
 GRAY='#c0c0c0'; BLUE='#000080'
@@ -96,11 +97,15 @@ class Academy:
     def hint(self):self.feedback.config(text=tr('Im Prüfungsmodus gibt es keine Hinweise.') if self.exam.get() else tr('Versuche: ')+LESSONS[self.index][2],fg='black')
     def lexicon(self):
         if self.exam.get():self.feedback.config(text=tr('Lexikon im Prüfungsmodus gesperrt.'));return
-        w=tk.Toplevel(self.root);w.title(tr('Sorcerer – Befehlslexikon'));w.geometry('650x500');q=tk.Entry(w,bg='white');q.pack(fill='x',padx=8,pady=8);t=tk.Text(w,bg='white',wrap='word',padx=8,pady=8);t.pack(fill='both',expand=True,padx=8,pady=8)
+        w=tk.Toplevel(self.root);w.title(tr('Sorcerer – Befehlslexikon'));w.geometry('760x600');tk.Label(w,text=('Reference examples only — not all commands are simulated.' if LANG=='en' else 'Nachschlagebeispiele – nicht alle Befehle werden simuliert.'),wraplength=700).pack(pady=4);q=tk.Entry(w,bg='white');q.pack(fill='x',padx=8,pady=8);t=tk.Text(w,bg='white',wrap='word',padx=8,pady=8);t.pack(fill='both',expand=True,padx=8,pady=8)
         def update(*_):
             needle=q.get().lower();t.config(state='normal');t.delete('1.0','end')
             for title,ex,example,_,_ in LESSONS:
                 if needle in (title+' '+ex+' '+example).lower():t.insert('end',title+' — '+example+'\n'+ex+'\n\n')
+            for term,de,en,example in ENTRIES:
+                explanation=en if LANG=='en' else de
+                if needle in (term+' '+explanation+' '+example).lower():
+                    t.insert('end',term+' — '+example+'\n'+explanation+'\n\n')
             t.config(state='disabled')
         q.bind('<KeyRelease>',update);update();q.focus_set()
 if __name__=='__main__':

@@ -11,7 +11,7 @@ Linux Sorcerer ist ein kostenloses, interaktives Linux-Lernprogramm im Retro-Sti
 ## Funktionen
 
 - 32 Lektionen zu Linux-Grundlagen und Systemverwaltung.
-- Interaktives simuliertes Terminal, Befehlslexikon und Prüfungsmodus.
+- Interaktives simuliertes Terminal, durchsuchbares Befehlslexikon mit 94 zusätzlichen Einträgen und Prüfungsmodus.
 - Deutsche und englische Oberfläche und Lerninhalte.
 - Offline lernen mit lokal gespeichertem Fortschritt.
 - Gestaltung im Stil klassischer Desktop-Assistenten.
@@ -47,8 +47,8 @@ Führe die Tests im Programmordner aus:
 python3 -m unittest -v
 ```
 
-Nach der Veröffentlichung kannst du über GitHub Issues Fehler melden und neue Lektionen vorschlagen. Nenne bei Fehlern möglichst deine Linux-Distribution, Programmversion und die Schritte zur Reproduktion. Updates werden vor der Veröffentlichung gemeinsam getestet.
+Du kannst über GitHub Issues Fehler melden und neue Lektionen vorschlagen. Nenne bei Fehlern möglichst deine Linux-Distribution, Programmversion und die Schritte zur Reproduktion. Updates werden vor der Veröffentlichung gemeinsam getestet.
 
 ## Projektstatus und Lizenz
 
-Aktuelle Version: v0.1.0-rc2 (Veröffentlichungskandidat). Weitere grafische Tests unter Linux Mint stehen aus. Das Magierbild wurde KI-generiert. Die Quellcodelizenz und die Verbreitungsbedingungen des Bildes müssen vor der öffentlichen Freigabe bestätigt werden. Unser Ziel ist ein kostenloses, quelloffenes Projekt.
+Version: v0.1.0. Die Ergebnisse der Praxis- und automatisierten Tests stehen in [TESTING.md](TESTING.md). Quellcode und Dokumentation stehen unter der [MIT-Lizenz](LICENSE); Bildrechte und Namensnennung sind in [ARTWORK.md](ARTWORK.md) dokumentiert.
