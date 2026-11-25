@@ -1,27 +1,54 @@
-# Linux Sorcerer – Die Akademie
+# Linux Sorcerer
 
 *Ancient Wisdom for Modern Systems.*
 
-Ein offline nutzbares Linux-Lernprogramm im Stil klassischer Desktop-Assistenten. 32 Lektionen, ein simuliertes Terminal, Befehlslexikon und Prüfungsmodus. Keine echten Shellbefehle werden ausgeführt. Die Lernoberfläche ist derzeit deutsch.
+[Deutsch](README.de.md) | English
 
-## Installation (Linux Mint / Debian / Ubuntu)
+![The Linux Sorcerer](sorcerer.png)
+
+Linux Sorcerer is a free, retro-styled interactive Linux learning application. An ancient sorcerer guides you through the fundamentals of Linux in a simulated terminal, without executing real shell commands.
+
+## Features
+
+- 32 lessons covering Linux fundamentals and system administration.
+- Interactive terminal simulator, command reference and exam mode.
+- English and German interfaces and learning materials.
+- Offline learning with locally saved progress.
+- Classic desktop-assistant design.
+
+## Getting started (Linux Mint, Debian, Ubuntu)
+
+Download or clone the repository, then open a terminal in the project directory.
 
 ```sh
 sudo apt install python3-tk
 python3 sorcerer.py
 ```
 
-Entpacke das Archiv und führe den zweiten Befehl im Programmordner aus. Fortschritt wird lokal unter `~/.local/share/linux-sorcerer/progress.json` gespeichert. Bestehender Fortschritt aus 1.0 bleibt erhalten. Die Simulation unterstützt nur ausgewählte Befehle und Optionen; Ausgaben sind Beispieldaten. Prüfungen akzeptieren festgelegte Befehlsvarianten.
+Choose English or Deutsch on first launch. You can switch languages later using the Deutsch / English button. Saved lesson and exam progress is retained; the current virtual exercise resets.
 
-## English
+Progress is stored in `~/.local/share/linux-sorcerer/progress.json`. Existing progress from version 1.0 is retained.
 
-A retro-styled, offline Linux learning application with 32 lessons, a safe simulated terminal, a command reference and an exam mode. The current application language is German. Install Python 3 and Tkinter using the commands above, then launch from the extracted directory. No real shell commands are executed by the simulator. Progress is stored locally. Contributions and translations are welcome once the project is published.
+## Learning safely
 
-## Development
+The simulator supports selected commands and options only. Its outputs are illustrative, and exams accept predefined command variants. It is not a full Linux shell. The installation command above runs on your real system.
 
-Run `python3 -m unittest -v` from the project directory. This is a release candidate, not a published release. The graphical interface needs further testing on Linux Mint. The artwork was AI-generated. License selection and artwork distribution terms must be confirmed by the project owner before public release.
+## Our philosophy
 
-### Sprache / Language (RC2)
-Beim ersten Start Deutsch oder English auswählen. Über die Schaltfläche Deutsch / English kann die Sprache später geändert werden. Der gespeicherte Lern- und Prüfungsfortschritt bleibt erhalten; die aktuelle virtuelle Übung wird zurückgesetzt.
+Knowledge should be accessible to everyone. We aim to keep every lesson free, offline and free of advertising, accounts and telemetry. The goal is to teach independence, not dependence.
 
-Choose Deutsch or English on first launch. Use the Deutsch / English button to switch later. Saved lesson and exam progress is retained; the current virtual exercise is reset.
+The project began on a November morning in 2026 with an espresso and a conversation about classic desktop assistants.
+
+## Development and feedback
+
+Run the tests from the project directory:
+
+```sh
+python3 -m unittest -v
+```
+
+Once public, use GitHub Issues to report bugs or suggest lessons. Please include your Linux distribution, application version and steps to reproduce any problem. Updates are tested together before release.
+
+## Project status and licensing
+
+Current version: v0.1.0-rc2 (release candidate). Further graphical testing on Linux Mint is pending. The artwork is AI-generated. The source-code license and artwork distribution terms are pending confirmation before public release. Our goal is a free and open-source project.
