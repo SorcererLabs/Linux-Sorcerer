@@ -8,4 +8,6 @@ Static review found no real shell execution in the simulator. This is not a comp
 
 ## Expanded reference
 
-Pending: run `python3 -m unittest -v`, launch the GUI, verify search and both languages, and repeat the RC2 regression checks. The earlier manual acceptance does not cover this branch.
+Project owner reported 10/10 manual checks passed on 2026-11-25: reference opens, searches for sudo, chmod, systemd-analyze, Kernel and an unknown term, English language switch and explanations, normal lesson completion, and progress persistence after restart.
+
+Pending: confirm automated test output (`python3 -m unittest -v`). The earlier full RC2 acceptance applies to the original version; the expanded reference has its own targeted acceptance above.
